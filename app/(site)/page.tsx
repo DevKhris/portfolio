@@ -1,5 +1,6 @@
 import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types/profile";
+import ExperienceList from "./components/ExperienceList";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
@@ -34,6 +35,7 @@ export default async function Home() {
               </div>
             ))}
         </section>
+        <ExperienceList></ExperienceList>
       </main>
     </>
   );

@@ -16,3 +16,44 @@ export async function getProfile() {
     skills,
   }`);
 }
+
+export async function getExperience() {
+  return client.fetch(
+    groq`*[_type == "experience"]{
+      _id,
+      name,
+      title,
+      "logo": logo.asset->url,
+      url,
+      description,
+      startDate,
+      endDate,
+    }`
+  );
+}
+
+export async function getProjects() {
+  return client.fetch(
+    groq`*[_type == "project"]{
+    _id,
+    name,
+    "slug": slug.current,
+    tags,
+    "logo": logo.asset->url
+  }`
+  );
+}
+
+export async function getProject(slug: string) {
+  return client.fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+    _id,
+    name,
+    projectUrl,
+    coverImage { alt, "image": asset->url },
+    tags,
+    description
+  }`,
+    { slug }
+  );
+}
