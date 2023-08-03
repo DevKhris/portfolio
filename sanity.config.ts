@@ -1,16 +1,14 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./schemas";
-
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+import { portfolioConfig } from "@/config/portfolio.config";
 
 export default defineConfig({
   name: "default",
-  title: "devkhris",
+  title: portfolioConfig.sanity.projectTitle,
 
-  projectId: projectId,
-  dataset: dataset,
+  projectId: portfolioConfig.sanity.projectId,
+  dataset: portfolioConfig.sanity.dataSet,
 
   basePath: "/backoffice",
 

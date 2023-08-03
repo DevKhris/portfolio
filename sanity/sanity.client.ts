@@ -1,13 +1,11 @@
+import { portfolioConfig } from "@/config/portfolio.config";
 import { createClient, type ClientConfig } from "@sanity/client";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
-
 const config: ClientConfig = {
-  projectId: projectId,
-  dataset: dataset,
+  projectId: portfolioConfig.sanity.projectId,
+  dataset: portfolioConfig.sanity.dataSet,
   apiVersion: "2023-07-29",
-  useCdn: false,
+  useCdn: portfolioConfig.sanity.useCdn,
 };
 
 const client = createClient(config);
