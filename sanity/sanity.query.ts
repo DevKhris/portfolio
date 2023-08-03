@@ -57,3 +57,38 @@ export async function getProject(slug: string) {
     { slug }
   );
 }
+
+export async function getArticles() {
+  return client.fetch(
+    groq`*[_type == "post"]{
+      _id,
+      headline,
+      "slug": slug.current,
+      image { "alt": headline, "url": asset->url},
+      description,
+      author->{
+          fullName, profileImage { "url": asset->url }
+      },
+      tags,
+      publishedDate
+    }`
+  );
+}
+
+export async function getArticle(slug: string) {
+  return client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      headline,
+      image { "alt": headline, "url": asset->url},
+      body,
+      author->{
+          fullName, profileImage { "url": asset->url }
+      },
+      tags,
+      metadata,
+      publishedDate
+    }`,
+    { slug }
+  );
+}

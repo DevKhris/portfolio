@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="py-6 md:px-16 px-6 border-b border-zinc-800 z-30 md:mb-28 mb-20">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <header className="z-30 px-6 py-6 mb-20 border-b md:px-16 border-zinc-800 md:mb-28">
+      <div className="flex items-center justify-between max-w-6xl mx-auto">
         <Link href="/">
           <Image src="" width={25} height={25} alt="logo" />
         </Link>
@@ -13,15 +13,23 @@ export default function Navbar() {
             <li>
               <Link
                 href="/about"
-                className="hover:text-yellow-400 duration-300"
+                className="duration-300 hover:text-yellow-400"
               >
                 About
               </Link>
             </li>
             <li>
               <Link
+                href="/articles"
+                className="duration-300 hover:text-yellow-400"
+              >
+                Articles
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/projects"
-                className="hover:text-yellow-400 duration-300"
+                className="duration-300 hover:text-yellow-400"
               >
                 Projects
               </Link>

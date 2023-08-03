@@ -50,8 +50,8 @@ export default async function Project({ params }: Props) {
           className="border rounded-xl border-zinc-800"
           width={900}
           height={460}
-          src={project.coverImage?.image}
-          alt={project.coverImage?.alt}
+          src={project?.coverImage?.image}
+          alt={project?.coverImage?.alt}
         />
 
         <div className="flex flex-col mt-8 leading-7 gap-y-6 text-zinc-400">

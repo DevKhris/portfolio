@@ -30,8 +30,8 @@ export default async function Project() {
               className="flex items-center gap-x-4 bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-lg ease-in-out"
             >
               <Image
-                src={project?.logo || ""}
-                alt={project?.name}
+                src={project?.logo}
+                alt={project.name}
                 height={60}
                 width={60}
               ></Image>
