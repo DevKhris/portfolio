@@ -16,11 +16,11 @@ export default async function ProjectsSection(): Promise<ReactElement> {
           Featured projects I&apos;ve built over the years
         </h2>
         <p className="text-zinc-400 max-2-lg overflow-clip">
-          I&apos;ve worked on tons of little projects over the years <br /> but
+          {/* I&apos;ve worked on tons of little projects over the years <br /> but
           these are the ones that I&apos;m most proud of. Many of them are
           open-source, so if you see something that piques your interest <br />{" "}
           Check out the code and contribute if you have ideas for how it can be
-          improved.
+          improved. */}
         </p>
       </div>
       <div className="mt-16">

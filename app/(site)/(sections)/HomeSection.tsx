@@ -4,20 +4,10 @@ import { ProfileType } from "@/types/profile";
 import { getProfile } from "@/sanity/sanity.query";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { TfiLinkedin, TfiGithub, TfiTwitterAlt } from "react-icons/tfi";
+import { getIcon } from "@/app/helpers/getIcon";
 
 export default async function HomeSection(): Promise<ReactElement> {
   const profile: ProfileType[] = await getProfile();
-
-  const getIcon = (name: string) => {
-    switch (name) {
-      case "linkedin":
-        return <TfiLinkedin size={24}></TfiLinkedin>;
-      case "twitter":
-        return <TfiTwitterAlt size={24}></TfiTwitterAlt>;
-      case "github":
-        return <TfiGithub size={24}></TfiGithub>;
-    }
-  };
 
   return (
     <section
