@@ -1,9 +1,12 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [active, setActive] = useState("");
+
   return (
-    <header className="fixed w-full backdrop-blur-3xl backdrop-filter bg-purple-950 bg-opacity-30 top-0 drop-shadow shadow-md">
+    <header className="z-50 fixed w-full backdrop-blur-3xl backdrop-filter bg-purple-950 bg-opacity-30 top-0 drop-shadow shadow-md">
       <nav className="container mx-auto py-6">
         <div className="flex flex-wrap items-center justify-between max-w-6xl mx-auto">
           <Link href="/">
@@ -16,52 +19,74 @@ export default function Navbar() {
           </Link>
           <ul className="flex space-x-4 items-center gap-x-8">
             <li>
-              <Link
+              <a
+                href="/#home"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#home" ? "text-yellow-400" : ""
+                }`}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
                 href="#about"
-                className="duration-300 hover:text-yellow-400"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#about" ? "text-yellow-400" : ""
+                }`}
               >
                 About
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="#experience"
-                className="duration-300 hover:text-yellow-400"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#experience" ? "text-yellow-400" : ""
+                }`}
               >
                 Experience
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                href="/skills"
-                className="duration-300 hover:text-yellow-400"
+              <a
+                href="/#skills"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#skills" ? "text-yellow-400" : ""
+                }`}
               >
                 Skills
-              </Link>
+              </a>
             </li>
             <li>
               <Link
                 href="/articles"
-                className="duration-300 hover:text-yellow-400"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "articles" ? "text-yellow-400" : ""
+                }`}
               >
                 Blog
               </Link>
             </li>
             <li>
-              <Link
-                href="/projects"
-                className="duration-300 hover:text-yellow-400"
+              <a
+                href="/#projects"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#projects" ? "text-yellow-400" : ""
+                }`}
               >
                 Projects
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                href="/contact"
-                className="duration-300 hover:text-yellow-400"
+              <a
+                href="/#contact"
+                className={`duration-300 hover:text-yellow-400 ${
+                  active == "#contact" ? "text-yellow-400" : ""
+                }`}
               >
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

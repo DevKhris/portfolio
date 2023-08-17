@@ -39,11 +39,17 @@ const experience = {
       name: "startDate",
       title: "Start Date",
       type: "date",
+      options: {
+        dateFormat: "YYYY-MM",
+      },
     }),
     defineField({
       name: "endDate",
       title: "End Date",
       type: "date",
+      options: {
+        dateFormat: "YYYY-MM",
+      },
     }),
   ],
 };
