@@ -6,9 +6,11 @@ export default async function ExperienceList() {
   const experience: ExperienceType[] = await getExperience();
 
   return (
-    <section className="mt-32">
-      <div className="mb-16">
-        <h2 className="font-semibold text-4xl mb-4">Work Experience</h2>
+    <section className="mt-32" id="experience">
+      <div className="mb-16 pt-16">
+        <h2 className="font-semibold text-4xl mb-4 text-center">
+          Work Experience
+        </h2>
       </div>
 
       <div className="flex flex-col gap-y-12">
@@ -34,7 +36,7 @@ export default async function ExperienceList() {
               <small className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
                 {data.startDate.toString()} - {data.endDate.toString()}
               </small>
-              <p className="text-base text-zinc-400 my-4">{data.description}</p>
+              <p className="text-base text-zinc-200 my-4">{data.description}</p>
             </div>
           </div>
         ))}

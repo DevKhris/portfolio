@@ -3,16 +3,21 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="z-30 px-6 py-6 mb-20 border-b md:px-16 border-zinc-800 md:mb-28">
-      <div className="flex items-center justify-between max-w-6xl mx-auto">
-        <Link href="/">
-          <Image src="" width={25} height={25} alt="logo" />
-        </Link>
-        <nav>
-          <ul className="flex items-center gap-x-8">
+    <header className="fixed w-full backdrop-blur-3xl backdrop-filter bg-purple-950 bg-opacity-30 top-0 drop-shadow shadow-md">
+      <nav className="container mx-auto py-6">
+        <div className="flex flex-wrap items-center justify-between max-w-6xl mx-auto">
+          <Link href="/">
+            <span className="inline-flex text-2xl">
+              {"<"}
+              <p>Dev</p>
+              <p className=" text-amber-400">Khris</p>
+              {"/>"}
+            </span>
+          </Link>
+          <ul className="flex space-x-4 items-center gap-x-8">
             <li>
               <Link
-                href="/about"
+                href="#about"
                 className="duration-300 hover:text-yellow-400"
               >
                 About
@@ -20,10 +25,26 @@ export default function Navbar() {
             </li>
             <li>
               <Link
+                href="#experience"
+                className="duration-300 hover:text-yellow-400"
+              >
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/skills"
+                className="duration-300 hover:text-yellow-400"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/articles"
                 className="duration-300 hover:text-yellow-400"
               >
-                Articles
+                Blog
               </Link>
             </li>
             <li>
@@ -34,9 +55,17 @@ export default function Navbar() {
                 Projects
               </Link>
             </li>
+            <li>
+              <Link
+                href="/contact"
+                className="duration-300 hover:text-yellow-400"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   );
 }
