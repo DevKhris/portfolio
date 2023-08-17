@@ -8,13 +8,20 @@ export async function getProfile() {
     headline,
     profileImage {alt, "image": asset->url},
     shortBio,
-    location,
     fullBio,
     email,
     "resumeURL": resumeURL.asset->url,
     socialLinks,
-    skills,
   }`);
+}
+
+export async function getSkills() {
+  return client.fetch(
+    groq`*[_type == "profile"]{
+      _id,
+      skills
+    }`
+  );
 }
 
 export async function getExperience() {

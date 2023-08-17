@@ -35,24 +35,6 @@ export default async function About() {
                 </div>
               </div>
             </section>
-
-            <section className="mt-24 max-w-2xl">
-              <h2 className="font-semibold text-4xl mb-4">Expertise</h2>
-              <p className="text-zinc-400 max-2-lg">
-                I&apos;ve spent few years working on my skills. In no particular
-                order, here are a few of them
-              </p>
-              <ul className="flex flex-wrap items-center gap-3 mt-8">
-                {data.skills?.map((skill, id) => (
-                  <li
-                    key={id}
-                    className="bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-md px-2 py-1"
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </section>
           </div>
         ))}
     </main>

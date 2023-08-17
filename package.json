@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "@sanity/client": "^6.2.0",
     "@sanity/image-url": "^1.0.2",
     "@types/node": "20.4.5",
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "@portabletext/react": "^3.0.4",
+    "@types/loadable__component": "^5.13.4",
+    "loadable": "^1.0.0",
     "react-icons": "^4.10.1"
   }
 }

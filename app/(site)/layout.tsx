@@ -23,6 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html className="scroll-smooth" lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        ></link>
+      </head>
       <body
         className={`${font.className} bg-gradient-to-bl from-violet-950 to-violet-700 text-white`}
       >
