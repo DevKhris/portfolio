@@ -32,6 +32,8 @@ export default function ProjectsSlider({
           projects.map((project) => (
             <div key={project._id} className="rounded-lg">
               <Link href={`/projects/${project.slug}`}>
+                <h3 className="mb-1 font-bold text-xl">{project.name}</h3>
+                <p className="text-sm text-zinc-400">{project.tags}</p>
                 <Image
                   className="border rounded-xl border-zinc-800 text-center items-center"
                   width={1360}
@@ -39,9 +41,6 @@ export default function ProjectsSlider({
                   src={project?.coverImage?.image}
                   alt={project?.coverImage?.alt}
                 />
-
-                <h3 className="mb-1 font-bold text-xl">{project.name}</h3>
-                <p className="text-sm text-zinc-400">{project.tags}</p>
               </Link>
             </div>
           ))}

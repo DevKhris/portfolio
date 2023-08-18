@@ -3,16 +3,15 @@ import { ReactElement } from "react";
 import { ProfileType } from "@/types/profile";
 import { getProfile } from "@/sanity/sanity.query";
 import { BiEnvelope, BiFile } from "react-icons/bi";
-import { TfiLinkedin, TfiGithub, TfiTwitterAlt } from "react-icons/tfi";
 import { getIcon } from "@/app/helpers/getIcon";
 
-export default async function HomeSection(): Promise<ReactElement> {
+export default async function AboutSection(): Promise<ReactElement> {
   const profile: ProfileType[] = await getProfile();
 
   return (
     <section
       className="flex flex-col lg:flex-row items-center  xl:justify-center align-middle justify-between mx-16 px-6 mt-32 scroll-mt-32"
-      id="home"
+      id="about"
     >
       {profile &&
         profile?.map((data: ProfileType) => (
@@ -21,10 +20,10 @@ export default async function HomeSection(): Promise<ReactElement> {
               <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900">
                 {data.fullName}
               </h1>
-              <h2 className="text-1xl font-normal tracking-tight sm:text-2xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-400">
+              <h2 className="text-1xl font-normal tracking-tight sm:text-2xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900">
                 {data.headline}
               </h2>
-              <p className="text-base text-zinc-400 leading-relaxed">
+              <p className="text-base text-zinc-200 leading-relaxed overflow-clip text-left  selection:bg-amber-400 selection:text-violet-900">
                 {data.shortBio}
               </p>
               <ul className="flex items-center gap-x-6 mt-10">

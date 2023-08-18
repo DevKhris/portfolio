@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getSkills } from "@/sanity/sanity.query";
 import { SkillType } from "@/types/skills";
 import { ReactElement } from "react";
@@ -13,9 +12,9 @@ export default async function SkillsSection(): Promise<ReactElement> {
     >
       <h2 className="font-semibold text-4xl mb-4">Skills</h2>
 
-      <p className="text-zinc-400 max-2-lg">
-        I&apos;ve spent few years working on my skills and knowledge. here are
-        some of them
+      <p className="text-zinc-200 max-2-lg text-1xl">
+        I&apos;ve spent few years learning and working on my skills and
+        knowledge. here are some of them
       </p>
 
       {skills &&

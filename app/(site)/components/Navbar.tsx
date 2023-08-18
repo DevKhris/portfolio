@@ -12,22 +12,12 @@ export default function Navbar() {
           <Link href="/">
             <span className="inline-flex text-2xl">
               {"<"}
-              <p>Dev</p>
-              <p className=" text-amber-400">Khris</p>
+              <p className="text-white">Dev</p>
+              <p className=" text-amber-400">Khris&nbsp;</p>
               {"/>"}
             </span>
           </Link>
           <ul className="flex space-x-4 items-center gap-x-8">
-            <li>
-              <a
-                href="/#home"
-                className={`duration-300 hover:text-yellow-400 ${
-                  active == "#home" ? "text-yellow-400" : ""
-                }`}
-              >
-                Home
-              </a>
-            </li>
             <li>
               <a
                 href="#about"
@@ -58,7 +48,7 @@ export default function Navbar() {
                 Skills
               </a>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/articles"
                 className={`duration-300 hover:text-yellow-400 ${
@@ -67,7 +57,7 @@ export default function Navbar() {
               >
                 Blog
               </Link>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/#projects"

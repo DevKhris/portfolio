@@ -30,7 +30,7 @@ export default async function Project({ params }: Props) {
   const project: ProjectType = await getProject(slug);
 
   return (
-    <main className="max-w-6xl px-8 mx-auto lg:px-16">
+    <main className="max-w-6xl px-8 mx-auto lg:px-16 mt-32">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
           <h1 className="mb-4 text-3xl font-bold lg:text-5xl lg:leading-tight">
@@ -40,9 +40,10 @@ export default async function Project({ params }: Props) {
           <a
             href={project.projectUrl}
             rel="noreferrer noopener"
-            className="bg-[#1d1d20] text-white hover:border-zinc-700 border-transparent rounded-md px-4 py-2"
+            target="_blank"
+            className="bg-amber-300 text-gray-900 hover:bg-amber-500 hover:text-white animate-bounce ease-in duration-200 border-transparent rounded-md px-4 py-2"
           >
-            View
+            View Project
           </a>
         </div>
 
@@ -54,7 +55,10 @@ export default async function Project({ params }: Props) {
           alt={project?.coverImage?.alt}
         />
 
-        <div className="flex flex-col mt-8 leading-7 gap-y-6 text-zinc-400">
+        <div className="flex flex-col mt-8 leading-7 gap-y-6">
+          <h2 className="mb-4 text-4xl font-bold  lg:leading-tight text-center">
+            Description
+          </h2>
           <PortableText value={project.description} />
         </div>
       </div>
