@@ -38,7 +38,7 @@ export default function Navbar(): ReactElement {
           } duration-300 ease-in-out transition-all `}
           id="menu"
         >
-          <ul className="md:space-x-4 md:items-center md:gap-x-8 md:flex md:justify-between">
+          <ul className="md:space-x-4 md:items-center md:gap-x-8 md:flex md:justify-between md:mt-0 mt-8">
             <li>
               <a
                 href="#about"

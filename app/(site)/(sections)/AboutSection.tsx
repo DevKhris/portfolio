@@ -52,9 +52,9 @@ export default async function AboutSection(): Promise<ReactElement> {
               </ul>
             </div>
 
-            <div>
+            <div className="flex flex-col flex-wrap items-center">
               <Image
-                className="rounded-full object-cover bg-transparent bg-top "
+                className="rounded-full object-cover bg-transparent bg-top md:w-full md:h-full w-32 h-32  "
                 src={data.profileImage.image}
                 width={640}
                 height={640}
@@ -65,7 +65,7 @@ export default async function AboutSection(): Promise<ReactElement> {
               <a
                 href={`${data.resumeURL}?dl=${data.fullName}_resume`}
                 target="_blank"
-                className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:text-amber-400 text-md"
+                className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:text-amber-400 text-md w-full"
               >
                 <BiFile />
                 <p>Download Resume</p>
