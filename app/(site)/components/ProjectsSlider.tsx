@@ -1,12 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import { ReactElement } from "react";
+import { MouseEventHandler, ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import { ProjectType } from "@/types/project";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 interface ProjectProps {
   projects: ProjectType[];
 }
@@ -14,37 +14,47 @@ interface ProjectProps {
 export default function ProjectsSlider({
   projects,
 }: ProjectProps): ReactElement {
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
+  const settings: Settings = {
+    className: "m-6 p-6",
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    useCSS: true,
+    initialSlide: 0,
+    infinite: true,
     autoplay: true,
+    draggable: true,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 400,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
   return (
-    <div className="container items-center">
-      <Slider {...settings} className="">
+    <>
+      <Slider {...settings}>
         {projects &&
           projects.map((project) => (
-            <div key={project._id} className="rounded-lg">
-              <Link href={`/projects/${project.slug}`}>
-                <h3 className="mb-1 font-bold text-xl">{project.name}</h3>
-                <p className="text-sm text-zinc-400">{project.tags}</p>
-                <Image
-                  className="border rounded-xl border-zinc-800 text-center items-center"
-                  width={1360}
-                  height={460}
-                  src={project?.coverImage?.image}
-                  alt={project?.coverImage?.alt}
-                />
+            <div className="aspect-w-16 aspect-h-9" key={project._id}>
+              <Link className=" " href={`/projects/${project.slug}`}>
+                <h3 className="bg-gray-900 rounded-lg rounded-b-none -mb-3 py-2 font-bold text-2xl md:text-3xl hover:text-purple-600 duration-200 ease-in-out transition-colors ">
+                  {project.name}
+                </h3>
               </Link>
+              <img
+                className="border rounded-xl border-transparent w-full "
+                src={project?.coverImage?.image}
+                alt={project?.coverImage?.alt}
+              />
+              <p className="text-sm md:text-md text-zinc-400 mb-2">
+                {project.tags}
+              </p>
             </div>
           ))}
       </Slider>
-    </div>
+    </>
   );
 }

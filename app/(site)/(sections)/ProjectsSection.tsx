@@ -21,7 +21,7 @@ export default async function ProjectsSection(): Promise<ReactElement> {
           to fit different aspects of their business necessities.
         </p>
       </div>
-      <div className="mt-16">
+      <div className="container mt-16">
         <ProjectsSlider projects={projects}></ProjectsSlider>
       </div>
     </section>
