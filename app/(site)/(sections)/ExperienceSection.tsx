@@ -15,7 +15,7 @@ export default async function ExperienceSection(): Promise<ReactElement> {
         <h2 className="font-semibold text-4xl mb-4 text-center">Experience</h2>
       </div>
 
-      <div className="flex flex-col gap-y-12">
+      <div className="flex flex-col md:gap-y-12 m-4 md:m-0">
         {experience?.reverse().map((data) => (
           <ExperienceItem key={data._id} experience={data}></ExperienceItem>
         ))}
