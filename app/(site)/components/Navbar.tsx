@@ -33,7 +33,7 @@ export default function Navbar(): ReactElement {
           </Link>
         </div>
         <div
-          className={`w-full md:flex md:items-center md:w-full sm:pt-4 sm:shadow-sm ${
+          className={`w-full md:flex md:flex-row md:items-center md:w-max sm:pt-2 sm:shadow-sm ${
             !toggleMenu === true ? "hidden" : ""
           } duration-300 ease-in-out transition-all `}
           id="menu"

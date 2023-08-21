@@ -10,9 +10,8 @@ export default function Home() {
       <AboutSection />
       <ExperienceSection />
       <SkillsSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       <ContactSection />
     </main>
   );
 }
-

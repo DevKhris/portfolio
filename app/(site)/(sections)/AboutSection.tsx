@@ -10,29 +10,29 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className="flex flex-col lg:flex-row items-center  xl:justify-center align-middle justify-between mx-16 px-6 mt-32 scroll-mt-32"
+      className="md:flex md:flex-row md:items-center  xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
       id="about"
     >
       {profile &&
         profile?.map((data: ProfileType) => (
           <>
             <div key={data?._id}>
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900">
+              <h1 className="md:text-3xl font-semibold tracking-tight text-3xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900">
                 {data.fullName}
               </h1>
-              <h2 className="text-1xl font-normal tracking-tight sm:text-2xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900">
+              <h2 className="md:text-2xl font-normal tracking-tight text-base mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900">
                 {data.headline}
               </h2>
-              <p className="text-base text-zinc-200 leading-relaxed overflow-clip text-left  selection:bg-amber-400 selection:text-violet-900">
+              <p className="text-base text-zinc-200 leading-relaxed overflow-clip text-clip pr-8 selection:bg-amber-400 selection:text-violet-900">
                 {data.shortBio}
               </p>
-              <ul className="flex items-center gap-x-6 mt-10">
+              <ul className="flex justify-center md:justify-start items-center gap-x-6 mt-10">
                 {Object.entries(data.socialLinks).map((item) => {
                   const [key, value] = item;
                   return (
                     <li
                       key={key}
-                      className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear"
+                      className="gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear"
                     >
                       <a href={value} target="_blank" rel="noreferer noopener">
                         {getIcon(key)}
@@ -40,7 +40,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                     </li>
                   );
                 })}
-                <li className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear">
+                <li className=" gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear">
                   <a
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"
