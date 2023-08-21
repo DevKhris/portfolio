@@ -94,6 +94,12 @@ const profile = {
       description: "Add a list of skills",
       of: [{ type: "string" }],
     }),
+    defineField({
+      name: "resume",
+      title: "Resume",
+      type: "file",
+      description: "Add resume for download",
+    }),
   ],
 };
 

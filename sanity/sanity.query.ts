@@ -8,9 +8,8 @@ export async function getProfile() {
     headline,
     profileImage {alt, "image": asset->url},
     shortBio,
-    fullBio,
     email,
-    "resumeURL": resumeURL.asset->url,
+    "resumeURL": resume.asset->url,
     socialLinks,
   }`);
 }

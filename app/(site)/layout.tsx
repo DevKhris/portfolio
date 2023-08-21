@@ -31,7 +31,7 @@ export default function RootLayout({
         ></link>
       </head>
       <body
-        className={`${font.className} bg-gradient-to-bl from-violet-950 to-violet-700 text-white`}
+        className={`${font.className} text-white bg-gradient-to-l from-violet-900 via-indigo-700 to-indigo-500`}
       >
         <Navbar />
         {children}
@@ -40,4 +40,3 @@ export default function RootLayout({
     </html>
   );
 }
-

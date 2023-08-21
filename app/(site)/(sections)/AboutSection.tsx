@@ -8,9 +8,10 @@ import { getIcon } from "@/app/helpers/getIcon";
 export default async function AboutSection(): Promise<ReactElement> {
   const profile: ProfileType[] = await getProfile();
 
+  console.log(profile);
   return (
     <section
-      className="md:flex md:flex-row md:items-center  xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
+      className=" md:flex md:flex-row md:items-center xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
       id="about"
     >
       {profile &&
@@ -63,7 +64,7 @@ export default async function AboutSection(): Promise<ReactElement> {
               />
 
               <a
-                href={`${data.resumeURL}?dl=${data.fullName}_resume`}
+                href={`${data.resumeURL}`}
                 target="_blank"
                 className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:text-amber-400 text-md w-full"
               >

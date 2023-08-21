@@ -9,7 +9,7 @@ export default async function ContactSection(): Promise<ReactElement> {
 
   return (
     <section
-      className="flex flex-col mx-auto justify-center align-middle items-center scroll-mt-36 mt-36 pt-4"
+      className="flex flex-col mx-auto justify-center align-middle items-center text-center scroll-mt-36 mt-36 pt-4"
       id="contact"
     >
       <div>
