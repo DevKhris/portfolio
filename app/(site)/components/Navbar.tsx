@@ -29,7 +29,7 @@ export default function Navbar(): ReactElement {
               setToggleMenu(!toggleMenu);
             }}
           >
-            <HiMenu cl size={24}></HiMenu>
+            <HiMenu size={24}></HiMenu>
           </Link>
         </div>
         <div
