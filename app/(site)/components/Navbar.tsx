@@ -1,14 +1,17 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
+import { HiMenu } from "react-icons/hi";
 
-export default function Navbar() {
+export default function Navbar(): ReactElement {
   const [active, setActive] = useState("");
+
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <header className="z-50 fixed w-full backdrop-blur-3xl backdrop-filter bg-purple-950 bg-opacity-30 top-0 drop-shadow shadow-md">
-      <nav className="container mx-auto py-6">
-        <div className="flex flex-wrap items-center justify-between max-w-6xl mx-auto">
+      <nav className="flex flex-wrap py-6 items-center justify-around">
+        <div className="">
           <Link href="/">
             <span className="inline-flex text-2xl">
               {"<"}
@@ -17,11 +20,29 @@ export default function Navbar() {
               {"/>"}
             </span>
           </Link>
-          <ul className="flex space-x-4 items-center gap-x-8">
+        </div>
+        <div className="md:hidden block w-6 h-">
+          <Link
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setToggleMenu(!toggleMenu);
+            }}
+          >
+            <HiMenu cl size={24}></HiMenu>
+          </Link>
+        </div>
+        <div
+          className={`w-full md:flex md:items-center md:w-full sm:pt-4 sm:shadow-sm ${
+            !toggleMenu === true ? "hidden" : ""
+          } duration-300 ease-in-out transition-all `}
+          id="menu"
+        >
+          <ul className="md:space-x-4 md:items-center md:gap-x-8 md:flex md:justify-between">
             <li>
               <a
                 href="#about"
-                className={`duration-300 hover:text-yellow-400 ${
+                className={` mx-4 py-2 block duration-300 hover:text-yellow-400 ${
                   active == "#about" ? "text-yellow-400" : ""
                 }`}
               >
@@ -31,7 +52,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#experience"
-                className={`duration-300 hover:text-yellow-400 ${
+                className={`mx-4 py-2 block duration-300 hover:text-yellow-400 ${
                   active == "#experience" ? "text-yellow-400" : ""
                 }`}
               >
@@ -41,7 +62,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/#skills"
-                className={`duration-300 hover:text-yellow-400 ${
+                className={` mx-4 py-2 block duration-300 hover:text-yellow-400 ${
                   active == "#skills" ? "text-yellow-400" : ""
                 }`}
               >
@@ -61,7 +82,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/#projects"
-                className={`duration-300 hover:text-yellow-400 ${
+                className={` mx-4 py-2 block duration-300 hover:text-yellow-400 ${
                   active == "#projects" ? "text-yellow-400" : ""
                 }`}
               >
@@ -71,7 +92,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/#contact"
-                className={`duration-300 hover:text-yellow-400 ${
+                className={` mx-4 py-2 block duration-300 hover:text-yellow-400 ${
                   active == "#contact" ? "text-yellow-400" : ""
                 }`}
               >
