@@ -8,7 +8,6 @@ import { getIcon } from "@/app/helpers/getIcon";
 export default async function AboutSection(): Promise<ReactElement> {
   const profile: ProfileType[] = await getProfile();
 
-  console.log(profile);
   return (
     <section
       className=" md:flex md:flex-row md:items-center xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
