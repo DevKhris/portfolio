@@ -1,7 +1,7 @@
 import { getProfile } from "@/sanity/sanity.query";
 import { ProfileType } from "@/types/profile";
 import { ReactElement } from "react";
-import { getIcon } from "@/app/helpers/getIcon";
+import getIcon from "@/app/utils/getIcon";
 import { BiEnvelope } from "react-icons/bi";
 
 export default async function ContactSection(): Promise<ReactElement> {
@@ -28,7 +28,7 @@ export default async function ContactSection(): Promise<ReactElement> {
                       className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear"
                     >
                       <a href={value} target="_blank" rel="noreferer noopener">
-                        {getIcon(key, 48)}
+                        {getIcon({ name: key, size: 48 })}
                       </a>
                     </li>
                   );

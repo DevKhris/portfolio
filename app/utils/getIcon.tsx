@@ -9,7 +9,7 @@ import {
 
 type IconProps = {
   name: string;
-  size: number;
+  size?: number;
   children?: ReactElement;
 };
 

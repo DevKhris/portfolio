@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { ProfileType } from "@/types/profile";
 import { getProfile } from "@/sanity/sanity.query";
 import { BiEnvelope, BiFile } from "react-icons/bi";
-import { getIcon } from "@/app/helpers/getIcon";
+import getIcon from "@/app/utils/getIcon";
 
 export default async function AboutSection(): Promise<ReactElement> {
   const profile: ProfileType[] = await getProfile();
@@ -35,12 +35,12 @@ export default async function AboutSection(): Promise<ReactElement> {
                       className="gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear"
                     >
                       <a href={value} target="_blank" rel="noreferer noopener">
-                        {getIcon(key)}
+                        {getIcon({ name: key, size: 26 })}
                       </a>
                     </li>
                   );
                 })}
-                <li className=" gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear">
+                <li className=" gap-x-3 mb-4 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear">
                   <a
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"
