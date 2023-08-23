@@ -4,13 +4,15 @@ import { getProject } from "@/sanity/sanity.query";
 import type { ProjectType } from "@/types/project";
 import { PortableText } from "@portabletext/react";
 
-type Props = {
+type ProjectProps = {
   params: {
     project: string;
   };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProjectProps): Promise<Metadata> {
   const slug = params.project;
   const project: ProjectType = await getProject(slug);
 
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Project({ params }: Props) {
+export default async function Project({ params }: ProjectProps) {
   const slug = params.project;
   const project: ProjectType = await getProject(slug);
 

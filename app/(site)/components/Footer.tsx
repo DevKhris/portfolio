@@ -1,4 +1,10 @@
-export default function Footer(props: unknown) {
+import { ReactElement } from "react";
+
+interface FooterProps {
+  name: string;
+}
+
+export default function Footer({ name }: FooterProps): ReactElement {
   return (
     <footer className="mt-44">
       <div className="max-w-7x1 mx-auto flex lg:flex-row flex-col items-center lg:justify-between justify-center gap-y-4 md:px-16 px-6 py-16 text-zinc-400">
@@ -14,7 +20,7 @@ export default function Footer(props: unknown) {
           >
             Developed by{" "}
             <span className="text-yellow-300 hover:text-yellow-500 ">
-              Christian Hernandez
+              {name}
             </span>
           </a>
         </small>

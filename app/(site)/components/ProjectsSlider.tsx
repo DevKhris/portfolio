@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { MouseEventHandler, ReactElement } from "react";
-import Image from "next/image";
+import { ReactElement } from "react";
 import Link from "next/link";
 import Slider, { Settings } from "react-slick";
 import { ProjectType } from "@/types/project";
@@ -44,11 +43,13 @@ export default function ProjectsSlider({
                   {project.name}
                 </h3>
               </Link>
-              <img
-                className="border rounded-xl border-transparent w-full z-50 "
-                src={project?.coverImage?.image}
-                alt={project?.coverImage?.alt}
-              />
+              <picture>
+                <img
+                  className="border rounded-xl border-transparent w-full z-50 "
+                  src={project?.coverImage?.image}
+                  alt={project?.coverImage?.alt}
+                />
+              </picture>
               <p className="text-sm md:text-md text-zinc-400 mb-2">
                 {project.tags}
               </p>

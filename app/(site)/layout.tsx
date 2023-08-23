@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <Footer />
+        <Footer name="Christian Hernandez" />
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import { portfolioConfig } from "@/config/portfolio.config";
-import { createClient, type ClientConfig } from "@sanity/client";
+import { createClient, type ClientConfig, SanityClient } from "@sanity/client";
 
 const config: ClientConfig = {
   projectId: portfolioConfig.sanity.projectId,
@@ -8,6 +8,6 @@ const config: ClientConfig = {
   useCdn: portfolioConfig.sanity.useCdn,
 };
 
-const client = createClient(config);
+const client: SanityClient = createClient(config);
 
 export default client;
