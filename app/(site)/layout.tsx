@@ -1,9 +1,9 @@
 import "./../globals.css";
-
 import type { Metadata } from "next";
-import { Oswald } from "next/font/google";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { Oswald } from "next/font/google";
+import GoogleAnalytics from "../utils/googleAnalytics";
 
 const font = Oswald({
   subsets: ["latin"],
@@ -33,6 +33,9 @@ export default function RootLayout({
       <body
         className={`${font.className} text-white bg-gradient-to-l from-violet-900 via-indigo-700 to-indigo-500`}
       >
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <Navbar />
         {children}
         <Footer name="Christian Hernandez" />

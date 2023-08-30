@@ -10,22 +10,24 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className=" md:flex md:flex-row md:items-center xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
+      className="md:flex md:flex-row md:items-center xl:justify-center align-middle md:justify-between md:mx-16 px-6 mt-32 scroll-mt-32"
       id="about"
     >
       {profile &&
         profile?.map((data: ProfileType) => (
           <>
-            <div key={data?._id}>
+            <div className="flex flex-col" key={data?._id}>
               <h1 className="md:text-3xl font-semibold tracking-tight text-3xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900">
                 {data.fullName}
               </h1>
               <h2 className="md:text-2xl font-normal tracking-tight text-base mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900">
                 {data.headline}
               </h2>
-              <p className="text-base text-zinc-200 leading-relaxed overflow-clip text-clip pr-8 selection:bg-amber-400 selection:text-violet-900">
-                {data.shortBio}
-              </p>
+              <div className="max-w-lg">
+                <p className="text-base text-zinc-200 overflow-clip pr-8 selection:bg-amber-400 selection:text-violet-900 text-md break-normal">
+                  {data.shortBio}
+                </p>
+              </div>
               <ul className="flex justify-center md:justify-start items-center gap-x-6 mt-10">
                 {Object.entries(data.socialLinks).map((item) => {
                   const [key, value] = item;
@@ -54,10 +56,10 @@ export default async function AboutSection(): Promise<ReactElement> {
 
             <div className="flex flex-col flex-wrap items-center">
               <Image
-                className="rounded-full object-cover bg-transparent bg-top md:w-full md:h-full w-32 h-32  "
+                className="rounded-full object-cover bg-transparent bg-top aspect-square"
                 src={data.profileImage.image}
-                width={640}
-                height={640}
+                width={400}
+                height={400}
                 quality={90}
                 alt={data.profileImage.alt ?? ""}
               />
