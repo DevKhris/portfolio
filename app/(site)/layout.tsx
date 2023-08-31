@@ -1,9 +1,11 @@
+"use client";
 import "./../globals.css";
 import type { Metadata } from "next";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { Oswald } from "next/font/google";
 import GoogleAnalytics from "../utils/googleAnalytics";
+import { MutableRefObject, useRef } from "react";
 
 const font = Oswald({
   subsets: ["latin"],
@@ -22,8 +24,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const htmlRef: MutableRefObject<null> = useRef(null);
   return (
-    <html className="scroll-smooth" lang="en">
+    <html className="scroll-smooth " lang="en" ref={htmlRef}>
       <head>
         <link
           rel="stylesheet"
@@ -31,12 +34,12 @@ export default function RootLayout({
         ></link>
       </head>
       <body
-        className={`${font.className} text-white bg-gradient-to-l from-violet-900 via-indigo-700 to-indigo-500`}
+        className={`${font.className} text-white bg-gradient-to-r  from-violet-900 via-indigo-700 to-indigo-500 dark:from-zinc-950 dark:via-stone-900 dark:to-zinc-900`}
       >
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
-        <Navbar />
+        <Navbar html={htmlRef} />
         {children}
         <Footer name="Christian Hernandez" />
       </body>

@@ -25,7 +25,7 @@ export default async function ContactSection(): Promise<ReactElement> {
                   return (
                     <li
                       key={key}
-                      className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear"
+                      className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear"
                     >
                       <a href={value} target="_blank" rel="noreferer noopener">
                         {getIcon({ name: key, size: 48 })}
@@ -33,7 +33,7 @@ export default async function ContactSection(): Promise<ReactElement> {
                     </li>
                   );
                 })}
-                <li className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 duration-300 hover:-translate-y-2 ease-linear">
+                <li className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear">
                   <a
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"

@@ -39,7 +39,7 @@ export default function ProjectsSlider({
           projects.map((project) => (
             <div className="aspect-w-16 aspect-h-9" key={project._id}>
               <Link href={`/projects/${project.slug}`}>
-                <h3 className="bg-gray-900 rounded-lg rounded-b-none -mb-3 py-2 font-bold text-2xl md:text-3xl hover:text-purple-600 duration-200 ease-in-out transition-colors bg-opacity-50 pb-3 ">
+                <h3 className="bg-gray-900 rounded-lg rounded-b-none -mb-3 py-2 font-semibold text-2xl md:text-3xl hover:text-amber-300 dark:hover:text-emerald-400  duration-200 ease-in-out transition-colors bg-opacity-50 pb-3 ">
                   {project.name}
                 </h3>
               </Link>

@@ -43,7 +43,7 @@ export default async function Project({ params }: ProjectProps) {
             href={project.projectUrl}
             rel="noreferrer noopener"
             target="_blank"
-            className="bg-amber-300 text-gray-900 hover:bg-amber-500 hover:text-white animate-bounce ease-in duration-200 border-transparent rounded-md px-4 py-2"
+            className="bg-amber-300 text-gray-900 hover:bg-amber-500 dark:bg-emerald-300 dark:hover:bg-emerald-500 hover:text-white dark:hover:text-slate-950 animate-bounce ease-in duration-200 border-transparent rounded-md px-4 py-2"
           >
             View Project
           </a>

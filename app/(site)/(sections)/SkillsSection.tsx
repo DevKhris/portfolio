@@ -26,7 +26,7 @@ export default async function SkillsSection(): Promise<ReactElement> {
             {data.skills?.map((skill, id) => (
               <div
                 key={id}
-                className="flex flex-col justify-center text-center items-center px-2 py-1 duration-300 hover:-translate-y-2 hover:text-amber-300"
+                className="flex flex-col justify-center text-center items-center px-2 py-1 duration-300 hover:-translate-y-2 hover:text-amber-300 dark:hover:text-emerald-300 "
               >
                 <i
                   className={`devicon-${skill.toLowerCase()}-plain devicon-${skill.toLowerCase()}-original text-[64px] hover:colored`}

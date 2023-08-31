@@ -5,6 +5,8 @@
 html {
   --scrollBar: #23004d;
   --thumb: #fcc200;
+  --darkThumb: rgb(52 211 153 / 1);
+  --darkScrollBar: #131313;
 }
 
 body::-webkit-scrollbar {
@@ -24,4 +26,25 @@ body::-webkit-scrollbar-thumb {
   background: var(--thumb);
   border-radius: 6px;
   border: 3px solid var(--scrollBar);
+}
+
+/* (.dark .dark\:hover\:text-emerald-400:hover) */
+
+.dark body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dark body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--darkThumb) var(--darkScrollBar);
+}
+
+.dark body::-webkit-scrollbar-track {
+  background: var(--darkScrollBar);
+}
+
+.dark body::-webkit-scrollbar-thumb {
+  background: var(--darkThumb);
+  border-radius: 6px;
+  border: 3px solid var(--darkScrollBar);
 }

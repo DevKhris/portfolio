@@ -19,7 +19,7 @@ export default function Footer({ name }: FooterProps): ReactElement {
             rel="noreferrer noopener"
           >
             Developed by{" "}
-            <span className="text-yellow-300 hover:text-yellow-500 ">
+            <span className="dark:text-teal-300 text-yellow-300 hover:text-yellow-500  dark:hover:text-emerald-400 ">
               {name}
             </span>
           </a>
