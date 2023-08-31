@@ -1,6 +1,5 @@
 "use client";
 import "./../globals.css";
-import type { Metadata } from "next";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { Oswald } from "next/font/google";
@@ -10,14 +9,6 @@ import { MutableRefObject, useRef } from "react";
 const font = Oswald({
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Christian Hernandez",
-  description: "A personal software developer portfolio",
-  openGraph: {
-    images: "",
-  },
-};
 
 export default function RootLayout({
   children,
