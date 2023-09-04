@@ -63,7 +63,7 @@ export default async function Project({ params }: ProjectProps) {
         <div className="flex flex-col ">
           <div className="flex flex-col items-center">
             <h2 className="m-5 text-3xl font-bold lg:text-5xl lg:leading-tight">
-              Skills
+              Technologies used
             </h2>
             <div className="grid justify-center grid-cols-4 lg:grid-cols-5">
               {project.skills?.map((skill, id) => (
