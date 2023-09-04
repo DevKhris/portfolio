@@ -61,6 +61,13 @@ const project = {
       description: "Write a full description about this project",
       of: [{ type: "block" }],
     }),
+    defineField({
+      name: "skills",
+      title: "Skills",
+      type: "array",
+      description: "Add skills for this role",
+      of: [{ type: "string" }],
+    }),
   ],
 };
 

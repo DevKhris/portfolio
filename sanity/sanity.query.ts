@@ -7,7 +7,7 @@ import type { ProjectType } from "@/types/project";
 import type { PostType } from "@/types/post";
 
 export async function getProfile(): Promise<ProfileType[]> {
-  return client.fetch(groq`*[_type == "profile"]{
+  return await client.fetch(groq`*[_type == "profile"]{
     _id,
     fullName,
     headline,
@@ -20,7 +20,7 @@ export async function getProfile(): Promise<ProfileType[]> {
 }
 
 export async function getSkills(): Promise<SkillType[]> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "profile"]{
       _id,
       skills
@@ -29,7 +29,7 @@ export async function getSkills(): Promise<SkillType[]> {
 }
 
 export async function getExperience(): Promise<ExperienceType[]> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "experience"]{
       _id,
       name,
@@ -44,7 +44,7 @@ export async function getExperience(): Promise<ExperienceType[]> {
 }
 
 export async function getProjects(): Promise<ProjectType[]> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "project"]{
     _id,
     name,
@@ -57,21 +57,22 @@ export async function getProjects(): Promise<ProjectType[]> {
 }
 
 export async function getProject(slug: string): Promise<ProjectType> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "project" && slug.current == $slug][0]{
     _id,
     name,
     projectUrl,
     coverImage { alt, "image": asset->url },
     tags,
-    description
+    description,
+    skills
   }`,
     { slug }
   );
 }
 
 export async function getArticles(): Promise<PostType[]> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "post"]{
       _id,
       headline,
@@ -88,7 +89,7 @@ export async function getArticles(): Promise<PostType[]> {
 }
 
 export async function getArticle(slug: string): Promise<PostType> {
-  return client.fetch(
+  return await client.fetch(
     groq`*[_type == "post" && slug.current == $slug][0]{
       _id,
       headline,
