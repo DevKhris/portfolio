@@ -1,16 +1,12 @@
-import type { Dispatch, MutableRefObject, Ref, SetStateAction } from "react";
+import type { MutableRefObject } from "react";
 
-export function themeToggle(
-  setMode: Dispatch<SetStateAction<string>>,
-  mode: string,
-  ref: MutableRefObject<null>
-) {
+export function themeToggle(mode: string, ref: MutableRefObject<null>) {
   const html = document.querySelector("html");
   if (mode === "dark") {
     html?.classList.remove("dark");
-    setMode("light");
+    return "light";
   } else {
     html?.classList.add("dark");
-    setMode("dark");
+    return "dark";
   }
 }

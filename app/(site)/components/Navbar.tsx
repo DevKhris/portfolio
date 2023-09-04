@@ -1,7 +1,13 @@
 "use client";
 import { themeToggle } from "@/app/utils/themeToggle";
 import Link from "next/link";
-import { MutableRefObject, ReactElement, useState } from "react";
+import {
+  MutableRefObject,
+  ReactElement,
+  useState,
+  type Dispatch,
+  SetStateAction,
+} from "react";
 import { HiMenu, HiMoon, HiSun } from "react-icons/hi";
 
 interface NavBarProps {
@@ -10,15 +16,16 @@ interface NavBarProps {
 
 export default function Navbar({ html }: NavBarProps): ReactElement {
   const [active, setActive] = useState("");
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState<string>("light");
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const handleThemeToggle = () => {
-    themeToggle(setMode, mode, html);
+    setMode(themeToggle(mode, html));
   };
+
   return (
-    <header className="z-50 fixed w-full backdrop-blur-3xl backdrop-filter bg-purple-950 dark:bg-zinc-950 bg-opacity-30 top-0 drop-shadow shadow-md duration-300 transition-colors dark:bg-opacity-70">
-      <nav className="flex flex-wrap py-6 items-center justify-around">
+    <header className="fixed top-0 z-50 w-full transition-colors duration-300 shadow-md backdrop-blur-3xl backdrop-filter bg-purple-950 dark:bg-zinc-950 bg-opacity-30 drop-shadow dark:bg-opacity-70">
+      <nav className="flex flex-wrap items-center justify-around py-6">
         <div>
           <Link href="/">
             <span className="inline-flex text-2xl">
@@ -31,7 +38,7 @@ export default function Navbar({ html }: NavBarProps): ReactElement {
             </span>
           </Link>
         </div>
-        <div className="md:hidden block w-6 h-">
+        <div className="block w-6 md:hidden h-">
           <Link
             href="#"
             onClick={(e) => {
@@ -48,7 +55,7 @@ export default function Navbar({ html }: NavBarProps): ReactElement {
           } duration-300 ease-in-out transition-all `}
           id="menu"
         >
-          <ul className="md:space-x-4 md:items-center md:gap-x-8 md:flex md:justify-between md:mt-0 mt-8">
+          <ul className="mt-8 md:space-x-4 md:items-center md:gap-x-8 md:flex md:justify-between md:mt-0">
             <li>
               <a
                 href="#about"
@@ -121,7 +128,7 @@ export default function Navbar({ html }: NavBarProps): ReactElement {
             </li>
             <li>
               <button
-                className=" mx-4 py-2 text-lg font-bold transition-colors dark:text-white dark:hover:text-amber-300 hover:text-emerald-300"
+                className="py-2 mx-4 text-lg font-bold transition-colors dark:text-white dark:hover:text-amber-300 hover:text-emerald-300"
                 onClick={handleThemeToggle}
               >
                 {mode === "light" ? <HiMoon size={24} /> : <HiSun size={24} />}
