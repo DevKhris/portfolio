@@ -36,7 +36,12 @@ export default async function AboutSection(): Promise<ReactElement> {
                       key={key}
                       className="gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear"
                     >
-                      <a href={value} target="_blank" rel="noreferer noopener">
+                      <a
+                        href={value}
+                        aria-label={`Go to my ${key} profile`}
+                        target="_blank"
+                        rel="noreferer noopener"
+                      >
                         {getIcon({ name: key, size: 26 })}
                       </a>
                     </li>
@@ -47,6 +52,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"
                     target="_blank"
+                    aria-label="Open email client to send me a mail to my address"
                   >
                     <BiEnvelope size={26} />
                   </a>
@@ -68,6 +74,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                 href={`${data.resumeURL}`}
                 target="_blank"
                 className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400 dark:hover:border-emerald-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:text-amber-400 dark:hover:text-emerald-400  text-md w-full"
+                aria-label="Download my updated resume"
               >
                 <BiFile />
                 <p>Download Resume</p>

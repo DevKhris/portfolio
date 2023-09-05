@@ -27,7 +27,12 @@ export default async function ContactSection(): Promise<ReactElement> {
                       key={key}
                       className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear"
                     >
-                      <a href={value} target="_blank" rel="noreferer noopener">
+                      <a
+                        href={value}
+                        aria-label={`Go to my ${key} profile`}
+                        target="_blank"
+                        rel="noreferer noopener"
+                      >
                         {getIcon({ name: key, size: 48 })}
                       </a>
                     </li>

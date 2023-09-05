@@ -23,7 +23,7 @@ export default function ExperienceItem({
   return (
     <div className="flex items-start md:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[4.5rem] before:md:left-7 before:left-6 before:w-[1px] before:h-[calc(100%-50px)] before:bg-zinc-800">
       <a
-        href={url}
+        href={url ?? "#"}
         className="min-w-[48px] min-h-[48px] md:min-h-[60px] md:min-w-[60px] mt-2 md:mt-0 rounded-md overflow-clip relative"
       >
         <Image src={logo} className="object-cover" alt={`${name} logo`} fill />

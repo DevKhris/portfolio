@@ -45,6 +45,7 @@ export default function Navbar({ html }: NavBarProps): ReactElement {
               e.preventDefault();
               setToggleMenu(!toggleMenu);
             }}
+            aria-label="Toggle menu in mobile view"
           >
             <HiMenu size={24}></HiMenu>
           </Link>
