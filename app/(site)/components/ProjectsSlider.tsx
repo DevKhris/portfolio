@@ -38,7 +38,10 @@ export default function ProjectsSlider({
         {projects &&
           projects.map((project) => (
             <div className="aspect-w-16 aspect-h-9" key={project._id}>
-              <Link href={`/projects/${project.slug}`}>
+              <Link
+                href={`/projects/${project.slug}`}
+                aria-label={`View ${project.name} project`}
+              >
                 <h3 className="bg-gray-900 rounded-lg rounded-b-none -mb-3 py-2 font-semibold text-2xl md:text-3xl hover:text-amber-300 dark:hover:text-emerald-400  duration-200 ease-in-out transition-colors bg-opacity-50 pb-3 ">
                   {project.name}
                 </h3>

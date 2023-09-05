@@ -43,6 +43,7 @@ export default async function ContactSection(): Promise<ReactElement> {
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"
                     target="_blank"
+                    aria-label="Open email client to send me a mail to my address"
                   >
                     <BiEnvelope size={48} />
                   </a>
