@@ -18,7 +18,7 @@ const profile = {
       title: "Headline",
       type: "string",
       description: "Short description of what you do",
-      validation: (rule) => rule.required().min(40).max(60),
+      validation: (rule) => rule.required().min(30).max(60),
     }),
     defineField({
       name: "profileImage",
