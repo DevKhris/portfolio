@@ -76,7 +76,7 @@ export default async function AboutSection(): Promise<ReactElement> {
               <a
                 href={`${data.resumeURL}`}
                 target="_blank"
-                className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400 dark:hover:border-emerald-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:text-amber-400 dark:hover:text-emerald-400  text-md w-full"
+                className="flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400 dark:hover:border-emerald-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:bg-amber-400 hover:text-gray-900 dark:hover:bg-emerald-400 text-md w-full"
                 aria-label="Download my updated resume"
               >
                 <BiFile />

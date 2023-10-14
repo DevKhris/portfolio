@@ -1,6 +1,8 @@
 import { getSkills } from "@/sanity/sanity.query";
 import { SkillType } from "@/types/skills";
 import { ReactElement } from "react";
+import { Reorder } from "framer-motion";
+import { SkillItem } from "../components/SkillItem";
 
 export default async function SkillsSection(): Promise<ReactElement> {
   const skills: SkillType[] = await getSkills();
@@ -24,15 +26,7 @@ export default async function SkillsSection(): Promise<ReactElement> {
             className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 grid-flow-row items-center align-middle justify-between gap-5 mt-8"
           >
             {data.skills?.map((skill, id) => (
-              <div
-                key={id}
-                className="flex flex-col justify-center text-center items-center px-2 py-1 duration-300 hover:-translate-y-2 hover:text-amber-300 dark:hover:text-emerald-300 "
-              >
-                <i
-                  className={`devicon-${skill.toLowerCase()}-plain devicon-${skill.toLowerCase()}-original text-[64px] hover:colored`}
-                ></i>
-                <span className="px-2 md:px-0">{skill}</span>
-              </div>
+              <SkillItem key={id} skill={skill}></SkillItem>
             ))}
           </div>
         ))}
