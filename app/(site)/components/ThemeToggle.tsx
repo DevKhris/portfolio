@@ -40,6 +40,8 @@ export function ThemeToggle({
         whileTap={{ scale: 0.9 }}
         className={className}
         onClick={toggle}
+        aria-label="Theme toggler button"
+        role="button"
       >
         {mode === "light" ? <HiMoon size={24} /> : <HiSun size={24} />}
       </motion.button>

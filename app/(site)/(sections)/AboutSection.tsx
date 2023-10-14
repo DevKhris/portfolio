@@ -68,6 +68,9 @@ export default async function AboutSection(): Promise<ReactElement> {
                 height={400}
                 quality={90}
                 alt={data.profileImage.alt ?? ""}
+                blurDataURL="data:iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8//dvPQAJdgN6GL8JXgAAAABJRU5ErkJggg=="
+                placeholder="blur"
+                priority
               />
 
               <a
