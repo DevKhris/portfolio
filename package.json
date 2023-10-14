@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:watch": "npx playwright test --ui"
   },
   "dependencies": {
     "@sanity/client": "^6.2.0",
@@ -33,6 +34,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.1",
     "@portabletext/react": "^3.0.4",
     "loadable": "^1.0.0",
     "react-icons": "^4.10.1"

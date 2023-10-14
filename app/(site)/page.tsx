@@ -7,8 +7,8 @@ import { ReactElement } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Christian Hernandez",
-  description: "A personal software developer portfolio",
+  title: process.env.NEXT_PORTFOLIO_NAME,
+  description: process.env.NEXT_PORTFOLIO_DESCRIPTION,
   openGraph: {
     images: "",
   },
