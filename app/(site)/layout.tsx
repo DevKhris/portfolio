@@ -1,7 +1,7 @@
 "use client";
 import "./../globals.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { Navbar } from "./components/Navbar";
 import { Oswald } from "next/font/google";
 import GoogleAnalytics from "../utils/googleAnalytics";
 import { MutableRefObject, useRef } from "react";
