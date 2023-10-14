@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { ReactElement } from "react";
 
-const Path = (props) => (
+type ToggleHandler = () => void;
+
+type ToggleProps = {
+  toggle: ToggleHandler;
+};
+
+const Path = (props: any) => (
   <motion.path
     fill="transparent"
     strokeWidth="2"
@@ -11,7 +17,7 @@ const Path = (props) => (
   />
 );
 
-export function MenuToggle({ toggle }): ReactElement {
+export function MenuToggle({ toggle }: ToggleProps): ReactElement {
   return (
     <motion.button
       whileHover={{ scale: 1.4 }}
