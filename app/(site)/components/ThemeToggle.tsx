@@ -36,8 +36,8 @@ export function ThemeToggle({
     <motion.li>
       <motion.button
         variants={variants}
-        whileHover={{ translate: "20%" }}
-        whileTap={{ scale: 0.9 }}
+        whileHover={{ scaleY: "20%" }}
+        whileTap={{ scale: 1 }}
         className={className}
         onClick={toggle}
         aria-label="Theme toggler button"

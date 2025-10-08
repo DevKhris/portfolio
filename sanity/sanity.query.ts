@@ -1,10 +1,10 @@
-import { groq } from "next-sanity";
-import client from "./sanity.client";
-import type { ProfileType } from "@/types/profile";
-import type { SkillType } from "@/types/skills";
-import type { ExperienceType } from "./../types/experience";
-import type { ProjectType } from "@/types/project";
-import type { PostType } from "@/types/post";
+import { groq } from 'next-sanity';
+import client from './sanity.client';
+import type { ProfileType } from '@/types/profile';
+import type { SkillType } from '@/types/skills';
+import type { ExperienceType } from './../types/experience';
+import type { ProjectType } from '@/types/project';
+import type { PostType } from '@/types/post';
 
 export async function getProfile(): Promise<ProfileType[]> {
   return await client.fetch(groq`*[_type == "profile"]{

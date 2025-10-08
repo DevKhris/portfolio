@@ -18,8 +18,30 @@ body {
   scrollbar-color: var(--thumb) var(--scrollBar);
 }
 
+-webkit-scrollbar {
+  width: 12px;
+}
+
+-webkit-scrollbar-corner {
+  background: var(--scrollBar);
+}
+
+body::-webkit-scrollbar-corner {
+  background: var(--scrollBar);
+}
+
+-webkit-scrollbar-track {
+  background: var(--scrollBar);
+}
+
 body::-webkit-scrollbar-track {
   background: var(--scrollBar);
+}
+
+-webkit-scrollbar-thumb {
+  background: var(--thumb);
+  border-radius: 6px;
+  border: 3px solid var(--scrollBar);
 }
 
 body::-webkit-scrollbar-thumb {

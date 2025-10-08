@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,33 +10,36 @@
     "test:watch": "npx playwright test --ui"
   },
   "dependencies": {
-    "@sanity/client": "^6.2.0",
-    "@sanity/image-url": "^1.0.2",
+    "@sanity/client": "^6.24.1",
+    "@sanity/icons": "^3.5.6",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.68.3",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
     "@types/react-slick": "^0.23.10",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
+    "eslint-config-next": "^14.2.13",
     "framer-motion": "^10.16.4",
     "install": "^0.13.0",
-    "next": "13.5.6",
-    "next-sanity": "^5.1.2",
+    "next": "^15.1.2",
+    "next-sanity": "^9.8.30",
     "npm": "^9.8.1",
     "postcss": "8.4.31",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-slick": "^0.29.0",
-    "sanity": "^3.14.4",
+    "sanity": "^3.68.3",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.13",
     "swr": "^2.2.2",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",
-    "@portabletext/react": "^3.0.4",
+    "@portabletext/react": "^3.2.0",
     "loadable": "^1.0.0",
     "react-icons": "^4.10.1"
   }

@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 import {
   TfiLinkedin,
   TfiGithub,
   TfiTwitterAlt,
   TfiAlert,
-} from "react-icons/tfi";
+} from 'react-icons/tfi';
 
 type IconProps = {
   name: string;
@@ -19,11 +19,11 @@ export default function getIcon({
   children,
 }: IconProps): ReactElement {
   switch (name) {
-    case "linkedin":
+    case 'linkedin':
       return <TfiLinkedin size={size}>{children}</TfiLinkedin>;
-    case "twitter":
+    case 'twitter':
       return <TfiTwitterAlt size={size}>{children}</TfiTwitterAlt>;
-    case "github":
+    case 'github':
       return <TfiGithub size={size}>{children}</TfiGithub>;
     default:
       return <TfiAlert size={size}>{children}</TfiAlert>;

@@ -9,23 +9,23 @@ export default async function ContactSection(): Promise<ReactElement> {
 
   return (
     <section
-      className="flex flex-col mx-auto justify-center align-middle items-center text-center scroll-mt-36 mt-36 pt-4"
+      className="flex flex-col items-center justify-center pt-4 mx-auto text-center align-middle scroll-mt-36 mt-36"
       id="contact"
     >
       <div>
-        <h2 className="text-4xl font-semibold mb-4">
+        <h2 className="mb-4 text-4xl font-semibold">
           Keep in touch and Contact with me
         </h2>
         {profile &&
           profile?.map((data: ProfileType) => (
             <div key={data._id}>
-              <ul className="flex items-center justify-center gap-x-6 mt-10">
+              <ul className="flex items-center justify-center mt-10 gap-x-6">
                 {Object.entries(data.socialLinks).map((item) => {
                   const [key, value] = item;
                   return (
                     <li
                       key={key}
-                      className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear"
+                      className="flex items-center mb-5 duration-300 ease-linear gap-x-3 hover:text-yellow-400 dark:hover:text-emerald-400 hover:-translate-y-2"
                     >
                       <a
                         href={value}
@@ -38,7 +38,7 @@ export default async function ContactSection(): Promise<ReactElement> {
                     </li>
                   );
                 })}
-                <li className="flex items-center gap-x-3 mb-5 hover:text-yellow-400 dark:hover:text-emerald-400  duration-300 hover:-translate-y-2 ease-linear">
+                <li className="flex items-center mb-5 duration-300 ease-linear gap-x-3 hover:text-yellow-400 dark:hover:text-emerald-400 hover:-translate-y-2">
                   <a
                     href={`mailto:${data.email}`}
                     rel="noreferer noopener"

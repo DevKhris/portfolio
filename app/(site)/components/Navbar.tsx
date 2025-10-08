@@ -43,17 +43,17 @@ export function Navbar({ html }: NavBarProps): ReactElement {
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }}>
           <Link href="/">
             <span className="inline-flex text-2xl">
-              {"<"}
+              {"{/"}
               <p className="text-white">Dev</p>
               <p className=" text-amber-400 dark:text-emerald-400 animate-pulse">
-                Khris&nbsp;
+                Khris
               </p>
-              {"/>"}
+              {"/}"}
             </span>
           </Link>
         </motion.div>
 
-        <motion.div className="block w-6 md:hidden h-full">
+        <motion.div className="block w-6 h-full md:hidden">
           <MenuToggle
             toggle={() => setToggleMenu((toggleMenu) => !toggleMenu)}
           ></MenuToggle>
@@ -89,38 +89,38 @@ export function Navbar({ html }: NavBarProps): ReactElement {
           >
             <MenuItem
               href="/#about"
-              className={` mx-4 py-2 block duration-300 hover:text-yellow-400 dark:hover:text-emerald-400`}
+              className={`text-xl mx-4 py-2 block duration-300 hover:text-amber-400 dark:hover:text-emerald-400`}
               active={false}
               text="About"
             ></MenuItem>
             <MenuItem
               href="/#experience"
-              className={` mx-4 py-2 block duration-300 hover:text-yellow-400 dark:hover:text-emerald-400`}
+              className={`text-xl mx-4 py-2 block duration-300 hover:text-amber-400 dark:hover:text-emerald-400`}
               active={false}
               text="Experience"
             ></MenuItem>
             <MenuItem
               href="/#skills"
-              className={` mx-4 py-2 block duration-300 hover:text-yellow-400 dark:hover:text-emerald-400`}
+              className={`text-xl mx-4 py-2 block duration-300 hover:text-amber-400 dark:hover:text-emerald-400`}
               active={false}
               text="Skills"
             ></MenuItem>
             <MenuItem
               href="/#projects"
-              className={` mx-4 py-2 block duration-300 hover:text-yellow-400 dark:hover:text-emerald-400`}
+              className={`text-xl mx-4 py-2 block duration-300 hover:text-amber-400 dark:hover:text-emerald-400`}
               active={false}
               text="Projects"
             ></MenuItem>
             <MenuItem
               href="/#contact"
-              className={` mx-4 py-2 block duration-300 hover:text-yellow-400 dark:hover:text-emerald-400`}
+              className={`text-xl mx-4 py-2 block duration-300 hover:text-amber-400 dark:hover:text-emerald-400`}
               active={false}
               text="Contact"
             ></MenuItem>
             <ThemeToggle
               toggle={handleThemeToggle}
               mode={mode}
-              className="py-2 mx-4 text-lg font-bold transition-colors dark:text-white dark:hover:text-amber-300 hover:text-emerald-300"
+              className="py-2 mx-4 text-xl font-bold transition-colors dark:text-white dark:hover:text-amber-300 hover:text-emerald-300"
             ></ThemeToggle>
           </motion.ul>
         </motion.div>

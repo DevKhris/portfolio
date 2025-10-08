@@ -1,19 +1,16 @@
-import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
-import { schemaTypes } from "./schemas";
-import { portfolioConfig } from "@/config/portfolio.config";
+import { defineConfig, Studio } from 'sanity';
+import { structureTool } from 'sanity/structure';
+import { schemaTypes } from './schemas';
+import { portfolioConfig } from '@/config/portfolio.config';
 
 export default defineConfig({
-  name: "default",
-  title: portfolioConfig.sanity.projectTitle,
-
   projectId: portfolioConfig.sanity.projectId,
   dataset: portfolioConfig.sanity.dataSet,
-
-  basePath: "/backoffice",
-
-  plugins: [deskTool()],
-
+  name: 'default',
+  basePath: '/backoffice',
+  title: portfolioConfig.sanity.projectTitle,
+  subtitle: 'production',
+  plugins: [structureTool()],
   schema: {
     types: schemaTypes,
   },

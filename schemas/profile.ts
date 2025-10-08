@@ -89,10 +89,17 @@ const profile = {
     }),
     defineField({
       name: "skills",
-      title: "Skills",
+      title: "Hard Skills",
       type: "array",
-      description: "Add a list of skills",
+      description: "Add a list of core skills",
       of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "soft_skills",
+      title: "Soft Skills",
+      type: "array",
+      description: "Add a list of soft skills",
+      of: [{ type: "string"}],
     }),
     defineField({
       name: "resume",

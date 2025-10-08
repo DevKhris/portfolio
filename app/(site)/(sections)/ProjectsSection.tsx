@@ -1,27 +1,27 @@
-import { ReactElement } from "react";
-import { getProjects } from "@/sanity/sanity.query";
-import type { ProjectType } from "@/types/project";
-import ProjectsSlider from "../components/ProjectsSlider";
+import { ReactElement } from 'react';
+import { getProjects } from '@/sanity/sanity.query';
+import type { ProjectType } from '@/types/project';
+import ProjectsSlider from '../components/ProjectsSlider';
 
 export default async function ProjectsSection(): Promise<ReactElement> {
   const projects: ProjectType[] = await getProjects();
 
   return (
     <section
-      className="flex flex-col items-center xl:justify-center align-middle justify-between scroll-mt-32 mt-32 text-center"
-      id="projects"
+      className='flex flex-col items-center justify-between mt-32 text-center align-middle xl:justify-center scroll-mt-32'
+      id='projects'
     >
       <div>
-        <h2 className="text-4xl font-semibold mb-4">
-          Featured projects I&apos;ve built over the years
+        <h2 className='mb-4 text-4xl font-semibold'>
+          Featured projects
         </h2>
-        <p className="text-zinc-200 max-2-lg text-1xl overflow-clip">
-          I have built many different projects across the time with many clients{" "}
+        <p className='text-zinc-200 max-2-lg text-1xl overflow-clip'>
+          Here u can see a showcase of projects and tools i've developed, designed and built
           <br />
-          to fit different aspects of their business necessities.
+           across the time with many clients, to resolve problems and fit different aspects of their business necessities.
         </p>
       </div>
-      <div className="container mt-16">
+      <div className='container mx-auto'>
         <ProjectsSlider projects={projects}></ProjectsSlider>
       </div>
     </section>

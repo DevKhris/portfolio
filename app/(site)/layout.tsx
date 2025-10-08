@@ -1,13 +1,13 @@
-"use client";
-import "./../globals.css";
-import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
-import { Oswald } from "next/font/google";
-import GoogleAnalytics from "../utils/googleAnalytics";
-import { MutableRefObject, useRef } from "react";
+'use client';
+import './../globals.css';
+import { Footer } from './components/Footer';
+import { Navbar } from './components/Navbar';
+import { Oswald } from 'next/font/google';
+import GoogleAnalytics from '../utils/googleAnalytics';
+import { MutableRefObject, useRef } from 'react';
 
 const font = Oswald({
-  subsets: ["latin"],
+  subsets: ['latin'],
 });
 
 export default function RootLayout({
@@ -17,11 +17,11 @@ export default function RootLayout({
 }) {
   const htmlRef: MutableRefObject<null> = useRef(null);
   return (
-    <html className="scroll-smooth " lang="en" ref={htmlRef}>
+    <html className='scroll-smooth' lang='en' ref={htmlRef}>
       <head>
         <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+          rel='stylesheet'
+          href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
         ></link>
       </head>
       <body
@@ -32,7 +32,7 @@ export default function RootLayout({
         ) : null}
         <Navbar html={htmlRef} />
         {children}
-        <Footer name="Christian Hernandez" />
+        <Footer name='Christian Hernandez' />
       </body>
     </html>
   );

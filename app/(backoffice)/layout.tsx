@@ -1,4 +1,4 @@
-import "./../globals.css";
+import './../globals.css';
 
 export default function StudioLayout({
   children,
@@ -6,7 +6,7 @@ export default function StudioLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>{children}</body>
     </html>
   );

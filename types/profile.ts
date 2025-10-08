@@ -15,4 +15,5 @@ export type ProfileType = {
   resumeURL: string;
   socialLinks: string[];
   skills: string[];
+  soft_skills: string[] | null | undefined
 };
