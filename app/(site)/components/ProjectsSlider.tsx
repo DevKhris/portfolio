@@ -28,7 +28,7 @@ export default function ProjectsSlider({
     centerMode: true,
   };
   return (
-    <>
+    <div className='hidden md:block'>
       <Slider {...settings}>
         {projects &&
           projects.map((project) => (
@@ -60,6 +60,6 @@ export default function ProjectsSlider({
             </div>
           ))}
       </Slider>
-    </>
+    </div>
   );
 }

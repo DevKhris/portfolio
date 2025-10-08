@@ -10,13 +10,13 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='h-screen px-6 mt-32 align-middle md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 scroll-mt-32'
+      className='mx-8 md:align-middle md:px-6 md:h-screen md:mt-32 md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 md:scroll-mt-32 scroll-mt-28'
       id='about'
     >
       {profile &&
         profile?.map((data: ProfileType) => (
-          <section className='inline md:flex' key={data?._id}>
-            <div className='absolute items-center space-y-0 align-middle opacity-50 select-none invert'>
+          <section className='md:flex' key={data?._id}>
+            <div className='absolute items-center space-y-0 align-middle opacity-50 select-none md:absolute invert'>
               <p className='font-semibold text-transparent text-white text-opacity-20 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
                 ABOUT ME
               </p>
@@ -27,7 +27,20 @@ export default async function AboutSection(): Promise<ReactElement> {
                 ABOUT ME
               </p>
             </div>
-            <div className='z-10 flex flex-col flex-wrap flex-grow order-2 md:order-1'>
+            <div className='flex-col flex-wrap items-center order-2 md:flex md:order-2'>
+              <Image
+                className='object-cover bg-transparent bg-top border-none rounded-full aspect-square drop-shadow-lg'
+                src={data.profileImage.image}
+                width={400}
+                height={400}
+                quality={90}
+                alt={data.profileImage.alt ?? ''}
+                blurDataURL='data:iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8//dvPQAJdgN6GL8JXgAAAABJRU5ErkJggg=='
+                placeholder='blur'
+                priority
+              />
+            </div>
+            <div className='z-10 flex flex-col flex-wrap flex-grow order-1 md:order-1'>
               <h1 className='md:text-5xl font-semibold tracking-tight lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 ABOUT ME
               </h1>
@@ -84,19 +97,6 @@ export default async function AboutSection(): Promise<ReactElement> {
                   </a>
                 </li>
               </ul>
-            </div>
-            <div className='flex flex-col flex-wrap items-center order-1 md:order-2'>
-              <Image
-                className='object-cover bg-transparent bg-top border-none rounded-full aspect-square drop-shadow-lg'
-                src={data.profileImage.image}
-                width={400}
-                height={400}
-                quality={90}
-                alt={data.profileImage.alt ?? ''}
-                blurDataURL='data:iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8//dvPQAJdgN6GL8JXgAAAABJRU5ErkJggg=='
-                placeholder='blur'
-                priority
-              />
             </div>
           </section>
         ))}

@@ -141,7 +141,7 @@ export function Navbar({ html }: NavBarProps): ReactElement {
           className={`w-full m-1 md:hidden shadow-sm duration-300 ease-in-out transition-all
              ${toggleMenu === false ? 'hidden' : 'md:hidden'}
              `}
-          id='menuResponsive'
+          id='menu'
         >
           <motion.ul
             variants={{
@@ -169,7 +169,7 @@ export function Navbar({ html }: NavBarProps): ReactElement {
             className='block mx-4 mt-6 space-y-3 gap-x-4'
           >
             <MenuItem
-              href='/#experience'
+              href='/#about'
               className='block text-xl duration-300 hover:text-amber-400 dark:hover:text-emerald-400'
               active={false}
               text='// ABOUT ME'

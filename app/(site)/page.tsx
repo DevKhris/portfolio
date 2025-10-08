@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 export default function Home(): ReactElement {
   return (
-    <main className='mt-32'>
+    <main className='md:mt-32 mt-28'>
       <AboutSection />
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
-      <ContactSection /> 
+      <ContactSection />
     </main>
   );
 }

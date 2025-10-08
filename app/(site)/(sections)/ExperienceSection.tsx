@@ -11,7 +11,7 @@ export default async function ExperienceSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='flex flex-col items-center justify-between mt-24 text-left align-middle xl:justify-center scroll-mt-24'
+      className='flex flex-col items-center justify-between text-left align-middle xl:justify-center md:scroll-mt-20 scroll-mt-20'
       id='experience'
     >
       <div className='z-10 pt-4 pb-4 align-middle'>
