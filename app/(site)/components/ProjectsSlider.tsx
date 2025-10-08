@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import { ReactElement } from "react";
-import Link from "next/link";
-import Slider, { Settings } from "react-slick";
-import { ProjectType } from "@/types/project";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+'use client';
+import { ReactElement } from 'react';
+import Link from 'next/link';
+import Slider, { Settings } from 'react-slick';
+import { ProjectType } from '@/types/project';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 interface ProjectProps {
   projects: ProjectType[];
 }
@@ -14,48 +15,48 @@ export default function ProjectsSlider({
   projects,
 }: ProjectProps): ReactElement {
   const settings: Settings = {
-    className: "m-6 p-6",
+    dots: true,
     speed: 500,
+    fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
     infinite: true,
     autoplay: true,
     draggable: true,
     adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 400,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
+    waitForAnimate: true,
+    centerMode: true,
   };
   return (
     <>
       <Slider {...settings}>
         {projects &&
           projects.map((project) => (
-            <div className="aspect-w-16 aspect-h-9" key={project._id}>
+            <div key={project._id} className=''>
               <Link
                 href={`/projects/${project.slug}`}
                 aria-label={`View ${project.name} project`}
               >
-                <h3 className="bg-gray-900 rounded-lg rounded-b-none -mb-3 py-2 font-semibold text-2xl md:text-3xl hover:text-amber-300 dark:hover:text-emerald-400  duration-200 ease-in-out transition-colors bg-opacity-50 pb-3 ">
-                  {project.name}
-                </h3>
+                <div className='flex flex-col flex-wrap flex-grow'>
+                  <div className='z-10 group'>
+                    <div className='absolute w-full py-2 space-y-2 transition-all duration-500 ease-in-out bg-gray-900 rounded-b-none group-hover:bg-opacity-50 rounded-xl bg-opacity-20 '>
+                      <h3 className='text-2xl font-semibold md:text-3xl group-hover:text-amber-300 dark:group-hover:text-emerald-400 '>
+                        {project.name}
+                      </h3>
+                      <p className='text-sm md:text-md text-zinc-200'>
+                        {project.tags}
+                      </p>
+                    </div>
+                    <picture className='flex-1 rounded-xl'>
+                      <img
+                        className='w-full h-auto rounded-xl'
+                        src={project?.coverImage?.image}
+                        alt={project?.coverImage?.alt}
+                      />
+                    </picture>
+                  </div>
+                </div>
               </Link>
-              <picture>
-                <img
-                  className="border rounded-xl border-transparent w-full z-50 "
-                  src={project?.coverImage?.image}
-                  alt={project?.coverImage?.alt}
-                />
-              </picture>
-              <p className="text-sm md:text-md text-zinc-400 mb-2">
-                {project.tags}
-              </p>
             </div>
           ))}
       </Slider>

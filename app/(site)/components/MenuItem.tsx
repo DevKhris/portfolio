@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { Variants, motion } from "framer-motion";
+import { ReactElement } from 'react';
+import { Variants, motion } from 'framer-motion';
 
 type ItemProps = {
   href: string;
@@ -32,21 +32,19 @@ export function MenuItem({
   text,
 }: ItemProps): ReactElement {
   return (
-    <>
-      <motion.li
-        variants={variants}
-        whileHover={{ translate: "2%" }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <a
-          href={href}
-          className={`
+    <motion.li
+      variants={variants}
+      whileHover={{ translate: '2%' }}
+      whileTap={{ scale: 0.9 }}
+    >
+      <a
+        href={href}
+        className={`
           ${className} 
-          ${active ? "text-yellow-400  dark:text-emerald-400" : ""}`}
-        >
-          {text}
-        </a>
-      </motion.li>
-    </>
+          ${active ? 'text-yellow-400  dark:text-emerald-400' : ''}`}
+      >
+        {text}
+      </a>
+    </motion.li>
   );
 }

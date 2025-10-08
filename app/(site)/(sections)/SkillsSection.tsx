@@ -9,10 +9,12 @@ export default async function SkillsSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='flex flex-col items-center justify-between mt-32 text-center align-middle xl:justify-center scroll-mt-32'
+      className='flex flex-col items-center justify-between h-screen text-center align-middle xl:justify-center scroll-mt-38'
       id='skills'
     >
-      <h2 className='mb-4 text-4xl font-semibold'>Skills</h2>
+      <h2 className='my-4 font-semibold leading-tight tracking-tight text-center md:text-5xl'>
+        SKILLS
+      </h2>
 
       <p className='text-zinc-200 max-2-lg text-1xl md:Text-2xl'>
         I&apos;ve spent few years learning and working on my skills and

@@ -10,23 +10,31 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='px-6 mt-32 align-middle md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 scroll-mt-32'
+      className='h-screen px-6 mt-32 align-middle md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 scroll-mt-32'
       id='about'
     >
       {profile &&
         profile?.map((data: ProfileType) => (
-          <section className='flex mx-auto' key={data?._id}>
-            <p className='absolute py-5 font-extrabold text-white border-4 opacity-50 outline text-9xl cursor-vertical'>
-              ABOUT ME.
-            </p>
-            <div className='flex flex-col flex-grow'>
-              <h1 className='md:text-4xl font-normal tracking-tight text-base my-1 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
-                ABOUT ME.
+          <section className='inline md:flex' key={data?._id}>
+            <div className='absolute items-center space-y-0 align-middle opacity-50 select-none invert'>
+              <p className='font-semibold text-transparent text-white text-opacity-20 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+                ABOUT ME
+              </p>
+              <p className='font-semibold text-transparent text-white text-opacity-10 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+                ABOUT ME
+              </p>
+              <p className='font-semibold text-transparent text-white text-opacity-5 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+                ABOUT ME
+              </p>
+            </div>
+            <div className='z-10 flex flex-col flex-wrap flex-grow order-2 md:order-1'>
+              <h1 className='md:text-5xl font-semibold tracking-tight lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
+                ABOUT ME
               </h1>
               <h2 className='md:text-3xl font-semibold tracking-tight text-3xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 {data.fullName}
               </h2>
-              <h3 className='md:text-2xl font-normal tracking-tight text-base my-1 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
+              <h3 className='md:text-2xl font-normal tracking-tight text-base lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 {data.headline}
               </h3>
               <div className='max-w-lg'>
@@ -34,11 +42,12 @@ export default async function AboutSection(): Promise<ReactElement> {
                   {data.shortBio}
                 </p>
               </div>
-              <div className='max-w-lg'>
+              <hr className='max-w-lg mt-4' />
+              <div className='flex justify-center max-w-lg'>
                 <a
                   href={`${data.resumeURL}`}
                   target='_blank'
-                  className='flex items-center justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400 dark:hover:border-emerald-400  duration-200 mt-8  py-2 text-center font-medium rounded-[2em] hover:bg-amber-400 hover:text-gray-900 dark:hover:bg-emerald-400 text-md w-full'
+                  className='flex items-center align-middle justify-center gap-x-2 bg-clip-border backdrop-blur border hover:border-amber-400 dark:hover:border-emerald-400  duration-200 mt-4 py-2 text-center font-medium rounded-[2em] hover:bg-amber-400 hover:text-gray-900 dark:hover:bg-emerald-400 text-md w-72 hover:w-full'
                   aria-label='Download my updated resume'
                 >
                   <BiFile />
@@ -76,8 +85,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                 </li>
               </ul>
             </div>
-
-            <div className='flex flex-col flex-wrap items-center'>
+            <div className='flex flex-col flex-wrap items-center order-1 md:order-2'>
               <Image
                 className='object-cover bg-transparent bg-top border-none rounded-full aspect-square drop-shadow-lg'
                 src={data.profileImage.image}

@@ -11,14 +11,15 @@ export default async function ExperienceSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='flex flex-col items-center justify-between align-middle xl:justify-center scroll-mt-24 mt-28'
+      className='flex flex-col items-center justify-between mt-24 text-left align-middle xl:justify-center scroll-mt-24'
       id='experience'
     >
-      <div className='pt-16 mb-16'>
-        <h2 className='mb-4 text-4xl font-semibold text-center'>Experience</h2>
+      <div className='z-10 pt-4 pb-4 align-middle'>
+        <h2 className='my-4 font-semibold leading-tight tracking-tight text-center md:text-5xl'>
+          EXPERIENCE
+        </h2>
       </div>
-
-      <div className='flex flex-col m-4 md:gap-y-12 md:m-0'>
+      <div className='z-10 flex flex-col m-4 md:gap-y-12 md:m-0'>
         {experience?.map((experience) => (
           <ExperienceItem
             key={experience._id}
