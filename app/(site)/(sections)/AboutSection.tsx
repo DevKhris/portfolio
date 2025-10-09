@@ -10,7 +10,7 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='mx-8 md:align-middle md:px-6 md:h-screen md:mt-28 md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 md:scroll-mt-32 scroll-mt-28'
+      className='mx-8 md:align-middle md:px-6 md:h-screen md:-mt-28 md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 md:scroll-mt-32 scroll-mt-28'
       id='about'
     >
       {profile &&
@@ -27,7 +27,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                 ABOUT ME
               </p>
             </div>
-            <div className='flex-col flex-wrap items-center order-2 md:flex md:order-2'>
+            <div className='flex-col flex-wrap order-2 md:flex md:order-2'>
               <Image
                 className='object-cover bg-transparent bg-top border-none rounded-full aspect-square drop-shadow-lg'
                 src={data.profileImage.image}
@@ -40,14 +40,14 @@ export default async function AboutSection(): Promise<ReactElement> {
                 priority
               />
             </div>
-            <div className='z-10 flex flex-col flex-wrap flex-grow order-1 md:order-1'>
-              <h1 className='md:text-5xl font-semibold tracking-tight lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
+            <div className='z-10 flex flex-col flex-wrap flex-grow order-1 mt-4 md:order-1 md:mt-0'>
+              <h1 className='md:text-5xl font-semibold tracking-tight md:leading-[3.7rem] leading-tight md:min-w-[700px] text-gray-300 text-center md:text-left selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 ABOUT ME
               </h1>
-              <h2 className='md:text-3xl font-semibold tracking-tight text-3xl lg:leading-[3.7rem] leading-tight lg:min-w-[700px] selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
+              <h2 className='md:text-3xl font-semibold tracking-tight text-3xl md:leading-[3.7rem] leading-tight md:min-w-[700px] text-center md:text-left selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 {data.fullName}
               </h2>
-              <h3 className='md:text-2xl font-normal tracking-tight text-base lg:leading-[3.7rem] leading-tight lg:min-w-[700px] text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
+              <h3 className='md:text-2xl font-normal tracking-tight text-base md:leading-[3.7rem] leading-tight md:min-w-[700px]  text-center md:text-left text-gray-300 selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 {data.headline}
               </h3>
               <div className='max-w-lg'>
