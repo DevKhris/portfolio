@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   const htmlRef: MutableRefObject<null> = useRef(null);
   return (
-    <html className='scroll-smooth' lang='en' ref={htmlRef}>
+    <html className='scroll-smooth ' lang='en' ref={htmlRef}>
       <head>
         <link
           rel='stylesheet'
@@ -33,7 +33,7 @@ export default function RootLayout({
         <header>
           <Navbar html={htmlRef} />
         </header>
-        <main>{children}</main>
+        <main className='md:mt-32 mt-28'>{children}</main>
         <Footer name='Christian Hernandez' />
       </body>
     </html>

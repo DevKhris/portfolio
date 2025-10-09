@@ -89,6 +89,12 @@ export function Navbar({ html }: NavBarProps): ReactElement {
               active={false}
               text='// PROJECTS'
             ></MenuItem>
+            {/* <MenuItem
+              href='/blog'
+              className='block text-xl duration-300 hover:text-amber-400 dark:hover:text-emerald-400'
+              active={false}
+              text='// BLOG'
+            ></MenuItem> */}
             <MenuItem
               href='/#contact'
               className='block text-xl duration-300 hover:text-amber-400 dark:hover:text-emerald-400'

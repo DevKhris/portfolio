@@ -10,12 +10,12 @@ export default async function AboutSection(): Promise<ReactElement> {
 
   return (
     <section
-      className='mx-8 md:align-middle md:px-6 md:h-screen md:mt-32 md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 md:scroll-mt-32 scroll-mt-28'
+      className='mx-8 md:align-middle md:px-6 md:h-screen md:mt-28 md:flex md:flex-row md:items-center xl:justify-center md:justify-between md:mx-16 md:scroll-mt-32 scroll-mt-28'
       id='about'
     >
       {profile &&
         profile?.map((data: ProfileType) => (
-          <section className='md:flex' key={data?._id}>
+          <div className='md:flex' key={data?._id}>
             <div className='absolute items-center space-y-0 align-middle opacity-50 select-none md:absolute invert'>
               <p className='font-semibold text-transparent text-white text-opacity-20 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
                 ABOUT ME
@@ -98,7 +98,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
         ))}
     </section>
   );

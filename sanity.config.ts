@@ -14,4 +14,8 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  // deployment: {
+  //   app: portfolioConfig.sanity.appId,
+  //   autoUpdates: true,
+  // },
 });
