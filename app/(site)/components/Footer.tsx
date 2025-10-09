@@ -6,8 +6,8 @@ interface FooterProps {
 
 export function Footer({ name }: FooterProps): ReactElement {
   return (
-    <footer className=''>
-      <div className='flex flex-col items-center justify-center px-4 py-4 mx-auto md:flex-row md:justify-between md:mx-4 text-zinc-400'>
+    <footer className='relative bottom-0 left-0 z-50 w-full md:fixed'>
+      <div className='flex flex-col items-center justify-center py-4 mx-auto md:flex-row md:justify-between md:mx-4 text-zinc-400'>
         <small className='duration-200'>
           All rights reserved &copy; {new Date().getFullYear()} DevKhris
         </small>

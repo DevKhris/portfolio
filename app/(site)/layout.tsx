@@ -25,13 +25,15 @@ export default function RootLayout({
         ></link>
       </head>
       <body
-        className={`${font.className} text-white bg-gradient-to-r  from-violet-900 via-indigo-700 to-indigo-500 dark:from-zinc-950 dark:via-stone-900 dark:to-zinc-900`}
+        className={`${font.className} text-white bg-gradient-to-r  from-dark_purple-500 via-indigo-700 to-indigo-600 dark:from-zinc-950 dark:via-stone-900 dark:to-zinc-900`}
       >
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
-        <Navbar html={htmlRef} />
-        {children}
+        <header>
+          <Navbar html={htmlRef} />
+        </header>
+        <main>{children}</main>
         <Footer name='Christian Hernandez' />
       </body>
     </html>
