@@ -38,7 +38,7 @@ export function Navbar({ html }: NavBarProps): ReactElement {
   };
 
   return (
-    <motion.header className='fixed top-0 z-50 w-full transition-colors duration-300 shadow-md backdrop-blur-3xl backdrop-filter bg-purple-950 dark:bg-zinc-950 bg-opacity-30 drop-shadow dark:bg-opacity-70'>
+    <motion.header className='fixed top-0 z-50 w-full transition-colors duration-300 shadow-md backdrop-blur-3xl backdrop-filter bg-purple-950 dark:bg-zinc-950 bg-opacity-20 drop-shadow dark:bg-opacity-70'>
       <motion.nav
         initial={false}
         className='flex-wrap items-center hidden w-full py-6 align-middle justify-evenly md:flex'

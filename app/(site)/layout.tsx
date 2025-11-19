@@ -1,10 +1,10 @@
 'use client';
-import './../globals.css';
+import '@/styles/global.css';
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { Oswald } from 'next/font/google';
-import GoogleAnalytics from '../utils/googleAnalytics';
 import { MutableRefObject, useRef } from 'react';
+import GoogleAnalytics from '../utils/googleAnalytics';
 
 const font = Oswald({
   subsets: ['latin'],
@@ -25,7 +25,7 @@ export default function RootLayout({
         ></link>
       </head>
       <body
-        className={`${font.className} text-white bg-gradient-to-r  from-dark_purple-500 via-indigo-700 to-indigo-600 dark:from-zinc-950 dark:via-stone-900 dark:to-zinc-900`}
+        className={`${font.className} text-white bg-gradient-to-r  from-dark_purple-500 via-indigo-700 to-indigo-600 dark:from-zinc-950 dark:via-stone-900 dark:to-zinc-900 bg-opacity-50`}
       >
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />

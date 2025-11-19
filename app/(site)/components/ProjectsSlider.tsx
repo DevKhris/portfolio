@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import Link from 'next/link';
-import Slider, { Settings } from 'react-slick';
 import { ProjectType } from '@/types/project';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 
 interface ProjectProps {
   projects: ProjectType[];
@@ -14,52 +14,56 @@ interface ProjectProps {
 export default function ProjectsSlider({
   projects,
 }: ProjectProps): ReactElement {
-  const settings: Settings = {
-    dots: true,
-    speed: 500,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    draggable: true,
-    adaptiveHeight: true,
-    waitForAnimate: true,
-    centerMode: true,
-  };
-  return (
-    <div className='hidden md:block'>
-      <Slider {...settings}>
-        {projects &&
-          projects.map((project) => (
-            <div key={project._id} className=''>
-              <Link
-                href={`/projects/${project.slug}`}
-                aria-label={`View ${project.name} project`}
-              >
-                <div className='flex flex-col flex-wrap flex-grow'>
-                  <div className='z-10 group'>
-                    <div className='absolute w-full py-2 space-y-2 transition-all duration-500 ease-in-out bg-gray-900 rounded-b-none group-hover:bg-opacity-50 rounded-xl bg-opacity-20 '>
-                      <h3 className='text-2xl font-semibold md:text-3xl group-hover:text-amber-300 dark:group-hover:text-emerald-400 '>
-                        {project.name}
-                      </h3>
-                      <p className='text-sm md:text-md text-zinc-200'>
-                        {project.tags}
-                      </p>
-                    </div>
-                    <picture className='flex-1 rounded-xl'>
-                      <img
-                        className='w-full h-auto rounded-xl'
-                        src={project?.coverImage?.image}
-                        alt={project?.coverImage?.alt}
-                      />
-                    </picture>
-                  </div>
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'center',
+      axis: 'x',
+    },
+    [
+      Autoplay({
+        playOnInit: true,
+        delay: 3000,
+      }),
+      Fade(),
+    ]
+  );
+
+  const renderContent = () => {
+    return projects?.map((project: ProjectType) => {
+      const { _id, slug, name, tags, coverImage }: ProjectType = project;
+
+      return (
+        <div className='embla__slide' key={_id}>
+          <Link href={`/projects/${slug}`} aria-label={`View ${name} project`}>
+            <div className='group'>
+              <div className='relative w-full'>
+                <div className='absolute z-10 w-full space-y-2 transition-all duration-500 ease-in-out bg-gray-900 rounded-b-none py- group-hover:bg-opacity-50 rounded-xl bg-opacity-20'>
+                  <h3 className='text-2xl font-semibold md:text-3xl group-hover:text-amber-300 dark:group-hover:text-emerald-400 '>
+                    {name}
+                  </h3>
+                  <p className='py-3 text-sm md:text-md text-zinc-200'>
+                    {tags}
+                  </p>
                 </div>
-              </Link>
+                <img
+                  className='w-full rounded-xl'
+                  src={coverImage?.image}
+                  alt={coverImage?.alt}
+                />
+              </div>
             </div>
-          ))}
-      </Slider>
+          </Link>
+        </div>
+      );
+    });
+  };
+
+  return (
+    <div className='embla'>
+      <div className='embla__viewport' ref={emblaRef}>
+        <div className='embla__container'>{renderContent()}</div>
+      </div>
     </div>
   );
 }
