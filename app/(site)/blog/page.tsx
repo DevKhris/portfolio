@@ -11,7 +11,7 @@ export default async function Articles() {
   const articles: PostType[] = await getArticles();
 
   return (
-    <section className='flex flex-row flex-wrap flex-grow md:justify-evenly md:flex-row scroll-mt-32'>
+    <section className='flex flex-row flex-wrap grow md:justify-evenly md:flex-row scroll-mt-32'>
       <div className='flex flex-row justify-center w-full mb-8'>
         <h1 className='text-5xl leading-tight uppercase'>Devlog</h1>
       </div>

@@ -38,7 +38,7 @@ export default function ProjectsSlider({
           <Link href={`/projects/${slug}`} aria-label={`View ${name} project`}>
             <div className='group'>
               <div className='relative w-full'>
-                <div className='absolute z-10 w-full space-y-2 transition-all duration-500 ease-in-out bg-gray-900 rounded-b-none py- group-hover:bg-opacity-50 rounded-xl bg-opacity-20'>
+                <div className='absolute z-10 w-full py-2 space-y-2 transition-all duration-500 ease-in-out rounded-b-none bg-gray-900/20 group-hover:bg-gray-900/50 rounded-xl '>
                   <h3 className='text-2xl font-semibold md:text-3xl group-hover:text-amber-300 dark:group-hover:text-emerald-400 '>
                     {name}
                   </h3>

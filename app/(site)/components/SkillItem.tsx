@@ -5,7 +5,7 @@ export function SkillItem({ skill }: { skill: string }): ReactElement {
   const iconNameOriginal = `devicon-${skill.toLowerCase()}-original`;
 
   return (
-    <div className='flex flex-col flex-wrap items-center justify-center flex-grow flex-shrink text-center align-middle duration-300 hover:-translate-y-2 hover:text-amber-300 dark:hover:text-emerald-300'>
+    <div className='flex flex-col flex-wrap items-center justify-center grow shrink text-center align-middle duration-300 hover:-translate-y-2 hover:text-amber-300 dark:hover:text-emerald-300'>
       <i
         className={`${iconNamePlain} ${iconNameOriginal} text-[64px] hover:colored`}
       ></i>

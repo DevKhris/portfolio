@@ -33,7 +33,7 @@ export default async function Project({ params }: ProjectProps) {
 
   return (
     <section
-      className='flex flex-col flex-wrap flex-grow justify-evenly md:flex-row scroll-mt-32'
+      className='flex flex-col flex-wrap grow justify-evenly md:flex-row scroll-mt-32'
       key={projectItem._id}
     >
       <div className='flex flex-col'>

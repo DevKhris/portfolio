@@ -17,13 +17,13 @@ export default async function AboutSection(): Promise<ReactElement> {
         profile?.map((data: ProfileType) => (
           <div className='md:flex' key={data?._id}>
             <div className='absolute items-center space-y-0 align-middle opacity-50 select-none md:absolute invert'>
-              <p className='font-semibold text-transparent text-white text-opacity-20 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+              <p className='font-semibold text-9xl text-white/20 cursor-vertical text-border-purple-500 text-border-size-8'>
                 ABOUT ME
               </p>
-              <p className='font-semibold text-transparent text-white text-opacity-10 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+              <p className='font-semibold text-9xl text-white/10 cursor-vertical text-border-purple-500 text-border-size-8 '>
                 ABOUT ME
               </p>
-              <p className='font-semibold text-transparent text-white text-opacity-5 text-9xl cursor-vertical text-border-transparent text-border-size-8 '>
+              <p className='font-semibold text-9xl text-white/5 cursor-vertical text-border-purple-500 text-border-size-8'>
                 ABOUT ME
               </p>
             </div>
@@ -40,7 +40,7 @@ export default async function AboutSection(): Promise<ReactElement> {
                 priority
               />
             </div>
-            <div className='z-10 flex flex-col flex-wrap flex-grow order-1 mt-4 md:order-1 md:mt-0'>
+            <div className='z-10 flex flex-col flex-wrap order-1 mt-4 grow md:order-1 md:mt-0'>
               <h1 className='md:text-5xl font-semibold tracking-tight md:leading-[3.7rem] leading-tight md:min-w-[700px] text-gray-300 text-center md:text-left selection:bg-amber-400 selection:text-violet-900 dark:selection:bg-emerald-400 dark:selection:text-gray-900'>
                 ABOUT ME
               </h1>

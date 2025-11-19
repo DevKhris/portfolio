@@ -33,7 +33,7 @@ export default async function Article({ params }: ArticleProps) {
   const post: PostType = await getArticle(article);
 
   return (
-    <section className='flex flex-row flex-wrap flex-grow px-4 m-4 mx-auto md:justify-evenly md:flex-row sm:px-6 lg:px-8'>
+    <section className='flex flex-row flex-wrap grow px-4 m-4 mx-auto md:justify-evenly md:flex-row sm:px-6 lg:px-8'>
       <Image
         width={300}
         height={300}

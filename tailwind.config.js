@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from 'tailwindcss/plugin'
-import flattenColorPalette from 'tailwindcss/src/util/flattenColorPalette'
-import toColorValue from 'tailwindcss/src/util/toColorValue'
 
 module.exports = {
   content: [
@@ -44,30 +42,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ matchUtilities, e, config, theme }) {
-      const textBorderSize = `--tw${config('prefix')}-text-border-size`
 
-      matchUtilities(
-        {
-          'text-border': (value) => ({
-            'text-shadow': `0 0 var(${textBorderSize},1px) ${toColorValue(value)}`,
-          }),
-        },
-        {
-          values: (({ DEFAULT: _, ...colors }) => colors)(flattenColorPalette(theme('borderColor'))),
-          type: 'color',
-        }
-      )
-
-      matchUtilities(
-        {
-          'text-border-size': (value) => ({
-            [textBorderSize]: value
-          }),
-        },
-        { values: theme('borderWidth') }
-      )
-    }),
   ],
   darkMode: 'class',
 };
