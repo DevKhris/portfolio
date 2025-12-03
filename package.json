@@ -29,7 +29,7 @@
     "eslint-config-next": "^14.2.13",
     "framer-motion": "^10.16.4",
     "install": "^0.13.0",
-    "next": "^16.0.3",
+    "next": "^16.0.7",
     "next-sanity": "^9.12.3",
     "npm": "^9.8.1",
     "postcss": "8.4.31",
